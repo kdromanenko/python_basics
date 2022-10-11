@@ -1,0 +1,133 @@
+'''
+Выполнил студент группы 2345 Романенко Кирилл
+
+1. Поработайте с переменными, создайте несколько, выведите на экран.
+Запросите у пользователя некоторые числа и строки и сохраните в переменные, затем выведите на экран.
+'''
+print('Задание 1')
+print(' ')
+name = input("Enter yor name: ")
+sename = input("Enter your sename: ")
+age = int(input("Enter your age: "))
+print(f"Hi, {name} {sename}. Your age is {age} - it so cool")
+print('*'*40)
+'''
+2. Пользователь вводит время в секундах. Переведите время в часы, минуты, секунды и
+выведите в формате чч:мм:сс. Используйте форматирование строк.
+'''
+print('Задание 2')
+print(' ')
+seconds = int(input("Enter time in seconds: "))
+seconds_hour = 3600
+seconds_minute = 60
+
+hours = seconds // seconds_hour
+seconds %= seconds_hour
+minutes = seconds // seconds_minute
+seconds %= seconds_minute
+
+print(f'{hours:02}:{minutes:02}:{seconds:02}')
+print('*'*40)
+'''
+3. Узнайте у пользователя число n. Найдите сумму чисел n + nn + nnn. Например, пользователь ввёл число 3.
+Считаем 3 + 33 + 333 = 369.
+'''
+print('Задание 3')
+print(' ')
+number = input('Please enter some number: ')
+single_number = int(number)
+double_number = int(number * 2)
+triple_number = int(number * 3)
+
+result = single_number + double_number + triple_number
+print(f'Sum {single_number} + {double_number} + {triple_number} =', result)
+print('*'*40)
+'''
+4. Пользователь вводит целое положительное число. Найдите самую большую цифру в числе.
+Для решения используйте цикл while и арифметические операции.
+'''
+print('Задание 4')
+print(' ')
+base = 10
+user_number = int(input('Please enter some positive number: '))
+maximum = 0
+while user_number:
+    digit = user_number % base
+    if digit > maximum:
+        maximum = digit
+    user_number //= base
+print('Maximum digit is:', maximum)
+print('*'*40)
+'''
+5. Запросите у пользователя значения выручки и издержек фирмы. Определите, с каким финансовым результатом работает
+фирма. Например, прибыль — выручка больше издержек, или убыток — издержки больше выручки.
+Выведите соответствующее сообщение.
+'''
+print('Задание 5')
+print(' ')
+income = int(input('Please inter income: '))
+outgoings = int(input('Please inter outgoings: '))
+
+profit = income - outgoings
+if profit < 0:
+    print(f'You works with loss {abs(profit)}')
+elif profit == 0:
+    print('You works without loss and profit')
+else:
+    print(f'You works with profit {profit}')
+    profitability = profit/income
+    print('Your ROI is:', profitability)
+    employees_number = int(input('Enter the number of company employees: '))
+    print('Profit of the company per employee:', profit/employees_number)
+print('*'*40)
+'''
+6. Если фирма отработала с прибылью, вычислите рентабельность выручки. Это отношение прибыли к выручке.
+Далее запросите численность сотрудников фирмы и определите прибыль фирмы в расчёте на одного сотрудника.
+'''
+print('Задание 6')
+print(' ')
+a = float(input('Please inter a: '))
+b = float(input('Please inter b: '))
+
+day = 1
+print(f'{day} day - {a:.2f}')
+while a < b:
+    day += 1
+    a *= 1.1
+    print(f'{day} day - {a}')
+
+print('Answer is:', day)
+
+print('* Alternative version with one printf', '*'*30)
+a = float(input('Please inter a: '))
+b = float(input('Please inter b: '))
+
+day = 1
+while True:
+    print(f'{day} day - {a}')
+    if a >= b:
+        break
+    day += 1
+    a *= 1.1
+
+print('Answer is:', day)
+print('*'*40)
+'''
+7. Спортсмен занимается ежедневными пробежками. В первый день его результат составил a километров.
+Каждый день спортсмен увеличивал результат на 10% относительно предыдущего. Требуется определить номер дня,
+на который результат спортсмена составит не менее b километров. Программа должна принимать значения параметров a и b
+и выводить одно натуральное число — номер дня.
+Например: a = 2, b = 3.
+Результат:
+1-й день: 2
+2-й день: 2,2
+3-й день: 2,42
+4-й день: 2,66
+5-й день: 2,93
+6-й день: 3,22
+Ответ: на шестой день спортсмен достиг результата — не менее 3 км
+'''
+print('Задание 7')
+print(' ')
+print('Нужна ваша помощь, Мария')
+print('*'*40)
